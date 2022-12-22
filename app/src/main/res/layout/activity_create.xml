@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".create.CreateActivity">
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="?attr/colorSurface"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:text="New Note"
+        android:fontFamily="@font/nunito"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textColorHint="?attr/colorSecondaryVariant"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewStar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExport">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editTextNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web|email"
+                android:background="@null"
+                android:hint="enter note"
+                android:imeOptions="flagNoExtractUi"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textLongMessage|textCapSentences|textAutoCorrect"
+                android:linksClickable="true"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:textAppearance="?textAppearanceBody1"
+                android:textColor="?attr/colorSecondary"
+                android:textColorHint="?attr/colorSurfaceVariant"
+                android:textDirection="anyRtl"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="saveNote"
+        android:padding="10dp"
+        android:text="save"
+        android:textColor="?attr/colorSecondary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewStar"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <TextView
+        android:id="@+id/textViewDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="deleteNote"
+        android:padding="10dp"
+        android:text="delete"
+        android:textColor="?attr/colorSecondary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <TextView
+        android:id="@+id/textViewExport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="exportNote"
+        android:padding="10dp"
+        android:text="export"
+        android:textColor="?attr/colorSecondary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDelete"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <ImageView
+        android:id="@+id/imageViewStar"
+        android:layout_width="36dp"
+        android:layout_height="38dp"
+        android:layout_margin="10dp"
+        android:onClick="starNote"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName"
+        app:srcCompat="@drawable/star_viewed" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

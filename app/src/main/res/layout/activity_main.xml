@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="?attr/colorSurface"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewSettings"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutOrder">
+
+        <TextView
+            android:id="@+id/textViewDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="deleteSelected"
+            android:padding="10dp"
+            android:text="delete"
+            android:textColor="?attr/colorSecondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewExport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="exportSelected"
+            android:padding="10dp"
+            android:text="export"
+            android:textColor="?attr/colorSecondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewDelete"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="starNote"
+            android:padding="10dp"
+            android:text="star"
+            android:textColor="?attr/colorSecondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewExport"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewUnStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="unstarNote"
+            android:padding="10dp"
+            android:text="unstar"
+            android:textColor="?attr/colorSecondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewStar"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutOrder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewSettings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStarNote">
+
+        <TextView
+            android:id="@+id/textViewCreated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="orderCreated"
+            android:padding="10dp"
+            android:text="created"
+            android:textColor="?attr/colorSecondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewEdited"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewEdited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="orderEdited"
+            android:padding="10dp"
+            android:text="edited"
+            android:textColor="?attr/colorSecondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewStared"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="orderFav"
+            android:padding="10dp"
+            android:text="favorite"
+            android:textColor="?attr/colorSecondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewCreated"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textViewStarNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:text="StarNotes"
+        android:textColor="?attr/colorSecondary"
+        android:textSize="25sp"
+        android:fontFamily="@font/space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/note_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/colorSurface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSelected"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageViewPlus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_corner"
+        android:onClick="createNote"
+        android:padding="10dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/plus" />
+
+    <ImageView
+        android:id="@+id/imageViewSettings"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="openSettings"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewExpand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewExpand"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/settings" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutExpand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewStarNote"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewExpand"
+        app:layout_constraintTop_toTopOf="@+id/textViewStarNote">
+
+
+        <ImageView
+            android:id="@+id/imageViewSelect"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="selectItems"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageViewOrder"
+            app:srcCompat="@drawable/select" />
+
+
+        <ImageView
+            android:id="@+id/imageViewOrder"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="selectOrder"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewSelect"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/set" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageViewExpand"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="expandItems"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayoutExpand"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewSettings"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayoutExpand"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/back" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStarNote"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

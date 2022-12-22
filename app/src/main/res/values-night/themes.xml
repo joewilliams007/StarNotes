@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.StarNotes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#121212</item>
+        <item name="colorPrimaryVariant">#181818</item>
+        <item name="colorOnPrimary">#282828</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#EEEEEE</item>
+        <item name="colorSecondaryVariant">#EEEEEE</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">#212121</item>
+        <!-- Customize your theme here. --> 081B33
+        <item name="colorSurface">#212121</item>
+        <item name="colorSurfaceVariant">#323232</item>
+        <item name="colorOnSurfaceVariant">#272727</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">#FAF7F0</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">#FAF7F0</item>
+    </style>
+</resources>

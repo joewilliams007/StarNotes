@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">StarNotes</string>
+    <string name="backuptxt">Restore to a backup by choosing a backup file
+        \nplease choose a file.
+        \nDefault path:
+        \ninternal-storage/Download/starnotes.txt</string>
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".settings.ThemeActivity">
+
+    <TextView
+        android:id="@+id/textViewStarSpace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:text="Themes"
+        android:fontFamily="@font/space"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewBlue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="themeBlue"
+        android:padding="10dp"
+        android:text="BlueCave"
+        android:textColor="?attr/colorSecondary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPurple" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewProfileVotesBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewBlue"/>
+
+    <TextView
+        android:id="@+id/textViewPurple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="themePurple"
+        android:padding="10dp"
+        android:text="SpacePurple"
+        android:textColor="?attr/colorSecondary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNormal" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewProfileVotesPurple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPurple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewPurple"/>
+
+    <TextView
+        android:id="@+id/textViewAmoled"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="themeAmoled"
+        android:padding="10dp"
+        android:text="PantherAmoled"
+        android:textColor="?attr/colorSecondary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBlue" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewProfileVotesAmoled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewAmoled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewAmoled"/>
+
+    <TextView
+        android:id="@+id/textViewNormal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="themeNormal"
+        android:padding="10dp"
+        android:text="FallenSpace (changes for darkmode)"
+        android:textColor="?attr/colorSecondary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStarSpace" />
+</androidx.constraintlayout.widget.ConstraintLayout>
